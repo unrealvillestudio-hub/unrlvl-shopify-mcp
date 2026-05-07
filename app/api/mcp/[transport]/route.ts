@@ -230,7 +230,7 @@ Model string: claude-sonnet-4-20250514`,
   },
   {
     // Vercel adapter options
-    // Redis URL optional — enables stateful SSE sessions
+    // Redis URL optional — enables stateful SSE sessions (Upstash recommended for prod)
     redisUrl: process.env.REDIS_URL,
     basePath: '/api/mcp',
     maxDuration: 60,
@@ -238,4 +238,4 @@ Model string: claude-sonnet-4-20250514`,
   }
 );
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, handler as DELETE };
