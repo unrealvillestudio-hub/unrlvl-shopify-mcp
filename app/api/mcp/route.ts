@@ -25,7 +25,7 @@ const brandParams = {
 
 // ── Handler ───────────────────────────────────────────────────────────────────
 const handler = createMcpHandler(
-  (server) => {
+  async (server) => {
 
     // ── 1. list_brands ─────────────────────────────────────────────────────
     server.tool(
