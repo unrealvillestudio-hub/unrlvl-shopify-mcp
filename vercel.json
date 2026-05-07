@@ -1,0 +1,12 @@
+{
+  "name": "unrlvl-shopify-mcp",
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "functions": {
+    "app/api/mcp/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}

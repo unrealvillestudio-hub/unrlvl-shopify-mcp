@@ -1,0 +1,23 @@
+{
+  "name": "unrlvl-shopify-mcp",
+  "version": "1.0.0",
+  "description": "Unrealville Studio — Shopify MCP Server (multi-brand)",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "@supabase/supabase-js": "^2.49.4",
+    "@vercel/mcp-adapter": "^0.6.0",
+    "next": "^15.3.1",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
