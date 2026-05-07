@@ -22,9 +22,9 @@ export async function getStore(
   store_type: 'b2c' | 'b2b'
 ): Promise<ShopifyStore> {
   const { data, error } = await sb
-    .schema('shopify')
-    .from('stores')
-    .select('brand_id, store_type, shop_domain, display_name, access_token, brand_context')
+    
+    .from('shopify_stores')
+    .select('brand_id, store_type, shop_domain, shop_name, access_token, brand_context')
     .eq('brand_id', brand_id)
     .eq('store_type', store_type)
     .eq('active', true)
@@ -37,7 +37,7 @@ export async function getStore(
     brand_id: data.brand_id,
     store_type: data.store_type,
     shop_domain: data.shop_domain,
-    shop_name: data.display_name,
+    shop_name: data.shop_name,
     access_token: data.access_token,
     store_id: '',
     brand_context: data.brand_context,
@@ -49,9 +49,9 @@ export async function listBrands(): Promise<
   { brand_id: string; store_type: string; shop_domain: string; shop_name: string }[]
 > {
   const { data, error } = await sb
-    .schema('shopify')
-    .from('stores')
-    .select('brand_id, store_type, shop_domain, display_name')
+    
+    .from('shopify_stores')
+    .select('brand_id, store_type, shop_domain, shop_name')
     .eq('active', true)
     .order('brand_id');
 
@@ -60,7 +60,7 @@ export async function listBrands(): Promise<
     brand_id: r.brand_id,
     store_type: r.store_type,
     shop_domain: r.shop_domain,
-    shop_name: r.display_name,
+    shop_name: r.shop_name,
   }));
 }
 
